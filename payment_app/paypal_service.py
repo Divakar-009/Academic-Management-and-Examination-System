@@ -1,3 +1,5 @@
+import os
+
 import paypalrestsdk
 from django.conf import settings
 from django.utils import timezone
@@ -17,8 +19,8 @@ paypalrestsdk.configure({
 
 def get_paypal_access_token():
     url = "https://api.sandbox.paypal.com/v1/oauth2/token"
-    client_id = settings.PAYPAL_CLIENT_ID
-    secret = settings.PAYPAL_SECRET
+    client_id = os.getenv("PAYPAL_CLIENT_ID")
+    secret = os.getenv("PAYPAL_CLIENT_SECRET")
     headers = {
     "Accept": "application/json",
     "Accept-Language": "en_US"
