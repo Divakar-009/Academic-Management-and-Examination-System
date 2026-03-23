@@ -1,4 +1,4 @@
-# Integrated Academic Management & Examination System (AMES)
+# Integrated Academic Management & Examination System (EDUNEXUS)
 
 This system is a multi-service platform designed to bridge the gap between academic evaluation, real-time communication, and administrative financial operations.
 
