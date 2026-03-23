@@ -1,6 +1,6 @@
 # Integrated Academic Management & Examination System (AMES)
 
-A comprehensive, microservices-oriented platform built to automate academic workflows, real-time communication, and administrative payroll processing.
+This system is a multi-service platform designed to bridge the gap between academic evaluation, real-time communication, and administrative financial operations.
 
 ## 🚀 System Architecture
 The project is architected into four distinct applications, all containerized with **Docker** to ensure environment consistency and scalable deployment.
