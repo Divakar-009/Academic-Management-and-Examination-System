@@ -46,7 +46,17 @@ The project is architected into four distinct applications, all containerized wi
 
 To run the entire ecosystem locally, ensure you have **Docker** and **Docker Compose** installed:
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/academic-management-system.git](https://github.com/your-username/academic-management-system.git)
-   cd academic-management-system
+## Clone the Project
+
+```bash
+# Clone the repository
+git clone https://github.com/Divakar-009/Academic-Management-and-Examination-System.git
+
+# Go into project directory
+cd Academic-Management-and-Examination-System
+
+
+✅ Notes you can add:  
+- If you’re using **Docker Compose**, you can replace `docker build` and `docker run` with:  
+```bash
+docker-compose up --build
