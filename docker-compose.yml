@@ -1,0 +1,61 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+        POSTGRES_DB: examdata
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: Divakar@009
+    ports:
+      - "5432:5432"
+
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  web:
+    build: .
+    container_name: django_app
+    command:  sh -c "python manage.py migrate && python manage.py collectstatic --noinput && daphne -b 0.0.0.0 -p 8000 core.asgi:application"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+
+  celery:
+    build: .
+    container_name: celery_worker
+    command: sh -c "sleep 10 && celery -A core worker -l info"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+
+
+  celery-beat:
+    build: .
+    container_name: celery_beat
+    command:  sh -c "sleep 15 && celery -A core beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+
+
+    
+    
+
+
+
+ 
