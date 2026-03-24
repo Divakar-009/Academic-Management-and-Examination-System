@@ -196,6 +196,9 @@ CELERY_BEAT_SCHEDULE = {
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 
 PAYPAL_MODE = "sandbox"   
+PAYPAL_CLIENT_ID = os.getenv("PAYPAL_CLIENT_ID")
+PAYPAL_CLIENT_SECRET = os.getenv("PAYPAL_SECRET")
+PAYPAL_BASE_URL = os.getenv("PAYPAL_BASE_URL")
 
 DEBUG = True
 ALLOWED_HOSTS = ["*"]

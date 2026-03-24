@@ -27,6 +27,8 @@ services:
       - .:/app
     ports:
       - "8000:8000"
+    env_file:
+      - .env
     depends_on:
       - db
       - redis
@@ -37,6 +39,8 @@ services:
     command: sh -c "sleep 10 && celery -A core worker -l info"
     volumes:
       - .:/app
+    env_file:
+      - .env
     depends_on:
       - db
       - redis
@@ -48,6 +52,8 @@ services:
     command:  sh -c "sleep 15 && celery -A core beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler"
     volumes:
       - .:/app
+    env_file:
+      - .env
     depends_on:
       - db
       - redis
