@@ -2,12 +2,12 @@
 
 This system is a multi-service platform designed to bridge the gap between academic evaluation, real-time communication, and administrative financial operations.
 
-## 🚀 System Architecture
+##  System Architecture
 The project is architected into four distinct applications, all containerized with **Docker** to ensure environment consistency and scalable deployment.
 
 ---
 
-## 📱 The Four Pillars
+## Project Modules
 
 ### 1. Teacher & Examination Module
 * **Workflow:** Secure Auth $\rightarrow$ Create Assignment $\rightarrow$ Add Questions $\rightarrow$ Publish.
@@ -15,7 +15,7 @@ The project is architected into four distinct applications, all containerized wi
 * **Analytics Dashboard:** Teachers can track performance metrics, including Pass/Fail ratios and class averages.
 * **Automated Reporting:** Once a deadline passes, the system compiles a summary report and emails it to the teacher.
 
-### 2. Student Portal
+### 2. Student Portal Module
 * **Assessment:** Interactive UI for attempting published tests.
 * **Instant Feedback:** Upon submission, the system calculates scores using an automated grading logic.
 * **Mail Service:** Sends a detailed result breakdown to the student's email immediately after test completion.
@@ -32,7 +32,7 @@ The project is architected into four distinct applications, all containerized wi
 
 ---
 
-## 🛠️ Tech Stack & DevOps
+##  Tech Stack & DevOps
 * **Backend:** Python (Django / Django REST Framework)
 * **Asynchronous Tasks:** Celery & Redis (for Emailing and Payroll processing)
 * **Real-time:** WebSockets (Django Channels)
@@ -42,7 +42,7 @@ The project is architected into four distinct applications, all containerized wi
 
 ---
 
-## 🐳 Getting Started (Docker)
+##  Getting Started (Docker)
 
 To run the entire ecosystem locally, ensure you have **Docker** and **Docker Compose** installed:
 
