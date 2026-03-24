@@ -10,7 +10,7 @@ import requests
 paypalrestsdk.configure({
     "mode": "sandbox",  # change to live later
     "client_id": settings.PAYPAL_CLIENT_ID,
-    "client_secret": settings.PAYPAL_SECRET
+    "client_secret": settings.PAYPAL_CLIENT_SECRET
 })
 
 
@@ -19,8 +19,8 @@ paypalrestsdk.configure({
 
 def get_paypal_access_token():
     url = "https://api.sandbox.paypal.com/v1/oauth2/token"
-    client_id = os.getenv("PAYPAL_CLIENT_ID")
-    secret = os.getenv("PAYPAL_CLIENT_SECRET")
+    client_id = settings.PAYPAL_CLIENT_ID,
+    secret = settings.PAYPAL_CLIENT_SECRET,
     headers = {
     "Accept": "application/json",
     "Accept-Language": "en_US"
