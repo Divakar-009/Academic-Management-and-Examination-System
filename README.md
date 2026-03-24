@@ -1,6 +1,6 @@
 # Integrated Academic Management & Examination System (EduNexus)
 
-This system is a multi-service platform designed to bridge the gap between academic evaluation, real-time communication, and administrative financial operations.
+EduNexus is a multi-service Academic Management and Examination System that integrates student management, examination processes, real-time chat and notifications, and financial operations into a centralized platform. The system is built using Django, Django REST Framework, WebSockets for real-time chat, Celery, Redis, Docker, and PayPal integration to simulate a production-level environment.
 
 ##  System Architecture
 The project is architected into four distinct applications, all containerized with **Docker** to ensure environment consistency and scalable deployment.
